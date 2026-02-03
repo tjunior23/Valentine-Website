@@ -1,4 +1,0 @@
-:{$PORT}
-
-root * /app/docs
-file_server

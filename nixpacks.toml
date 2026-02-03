@@ -1,0 +1,7 @@
+[phases.setup]
+nixPkgs = ["nodejs"]
+
+[phases.build]
+
+[start]
+cmd = "npx serve docs -l ${PORT:-3000}"
