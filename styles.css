@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background with photo */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+/* Yes page uses restaurant image */
+.background-restaurant {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Restaurant.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+/* Subtle dark overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+/* Main container */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Proposal card - glassmorphism effect */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main heading */
+.card h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card .name {
+    color: #B08D55;
+    font-weight: 500;
+}
+
+/* Buttons container */
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Base button styles */
+.btn {
+    padding: 14px 40px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+/* Yes button */
+.btn-yes {
+    background: linear-gradient(135deg, #B08D55 0%, #8B0000 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(176, 141, 85, 0.3);
+}
+
+.btn-yes:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(176, 141, 85, 0.4);
+}
+
+/* No button */
+.btn-no {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-no:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==================== */
+/* YES PAGE STYLES      */
+/* ==================== */
+
+.reveal-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Reservation details */
+.details {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item .info {
+    flex: 1;
+}
+
+.detail-item .label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    font-weight: 400;
+}
+
+.detail-item .value {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.detail-item .value.highlight {
+    color: #B08D55;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+/* Footer message */
+.footer-message {
+    color: #B08D55;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .card, .reveal-card {
+        padding: 40px 25px;
+        margin: 10px;
+    }
+
+    .card h1 {
+        font-size: 1.6rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 14px 30px;
+    }
+
+    .detail-item {
+        padding: 14px 0;
+    }
+
+    .detail-item .value {
+        font-size: 1rem;
+    }
+
+    .detail-item .value.highlight {
+        font-size: 1.1rem;
+    }
+}
